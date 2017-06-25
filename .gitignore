@@ -21,3 +21,7 @@
 .byebug_history
 
 /readyrails.box
+.vagrant/
+/Vagrantfile
+# Ignore application configuration
+/config/application.yml
