@@ -1,0 +1,15 @@
+class CreateMembershipdata < ActiveRecord::Migration[5.0]
+  def change
+    create_table :membershipdata do |t|
+      t.string :first_name
+      t.string :last_name
+      t.string :Email
+      t.integer :Phone_number
+      t.string :year_group
+      t.string :school
+      t.string :organisation
+
+      t.timestamps
+    end
+  end
+end
