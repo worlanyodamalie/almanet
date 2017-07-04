@@ -1,4 +1,54 @@
-<nav class="navbar navbar-default">
+<header role="banner" id="fh5co-header">
+			<div class="container">
+				<!-- <div class="row"> -->
+			    <nav class="navbar navbar-default">
+		        <div class="navbar-header">
+		        	<!-- Mobile Toggle Menu Button -->
+					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+
+                <%= link_to "NectHub" , root_path , :class => "navbar-brand" %>
+		        </div>
+		        <div id="navbar" class="navbar-collapse collapse">
+		          <ul class="nav navbar-nav navbar-right">
+              <li class="active"><%= link_to "Home", '#' %> </li>
+              <li ><%= link_to "About", '#' %> </li>
+              <li ><%= link_to "Features", '#' %> </li>
+              <li ><%= link_to "testimonials", '#' %> </li>
+              <li ><%= link_to "pricing", '#' %> </li>
+
+              <li><%= link_to "Sign In", new_organisation_registration_path%> </li>
+              <% if organisation_signed_in?%>
+
+             <li><%= link_to "Login", new_organisation_session_path  %> </li>
+              <li><%= link_to "Logout", destroy_organisation_session_path, method: :delete %> </li>
+          <% else %>
+              <li><%= link_to "Logout", destroy_organisation_session_path, method: :delete %> </li>
+       <% end%>
+		       <!--     <li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
+		            <li><a href="#" data-nav-section="about"><span>About</span></a></li>
+		            <li><a href="#" data-nav-section="services"><span>Services</span></a></li>
+		            <li><a href="#" data-nav-section="features"><span>Features</span></a></li>
+		            <li><a href="#" data-nav-section="testimonials"><span>Testimonials</span></a></li>
+		            <li><a href="#" data-nav-section="pricing"><span>Pricing</span></a></li>
+		            <li><a href="#"><span>Sign In</span></a></li>
+		            <li><a href="#"><span>Sign Up</span></a></li> -->
+		          </ul>
+		        </div>
+			    </nav>
+			   </div>
+		  </div>
+	</header>
+
+
+
+
+
+
+
+
+
+
+<!--<nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
       <%#<a class="navbar-brand" href="#">Photogram</a>%>
@@ -14,4 +64,4 @@
       <% end%>
     </ul>
   </div>
-</nav>
+</nav> -->
