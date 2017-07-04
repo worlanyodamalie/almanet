@@ -30,11 +30,12 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.11'
 gem 'figaro'
+
+gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -54,3 +55,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+
