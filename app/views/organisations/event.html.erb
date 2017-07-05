@@ -1,0 +1,98 @@
+<div class="container">
+	        	<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+		        	<div class="mdl-card__title">
+	    				<h2 class="mdl-card__title-text">Events</h2>
+	  				</div>
+					<div class="mdl-card__supporting-text" align="center">
+						<div class="row">
+							<div class="col-lg-6 col-sm-12">
+								<form action="#">
+								  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+								    <input class="mdl-textfield__input" type="text" id="sample3">
+								    <label class="mdl-textfield__label" for="sample3">Search for event</label>
+								  </div>
+								</form>
+							</div>
+							<div class="col-lg-6 col-sm-12">
+								<br />
+								<a button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
+									Create New
+								</a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+	        </div>
+	        <br /><br />
+	        <div class="container">
+	        	<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+		        	<div class="mdl-card__title">
+	    				<h2 class="mdl-card__title-text">Your Events</h2>
+	  				</div>
+					<div class="mdl-card__supporting-text" align="center">
+						<br />
+						<div class="row">
+							<div class="col-lg-3 col-sm-12">
+								<div class="demo-card-event mdl-card mdl-shadow--2dp">
+								  <div class="mdl-card__title mdl-card--expand">
+								    <h4>
+								      Featured event:<br><!-- Feed from backend -->
+								      May 24, 2016<br>
+								      7-11pm
+								    </h4>
+								  </div>
+								  <div class="mdl-card__actions mdl-card--border">
+								    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+								      Add to Calendar
+								    </a>
+								    <div class="mdl-layout-spacer"></div>
+								    <i class="material-icons">event</i>
+								  </div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-sm-12">
+							</div>
+							<div class="col-lg-3 col-sm-12">
+							</div>
+							<div class="col-lg-3 col-sm-12">
+							</div>
+						</div>
+
+					</div>
+
+          <div class="modal fade" id="myModal" role="dialog">
+	    <div class="modal-dialog modal-lg">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	          <h4 class="modal-title">Your event details</h4>
+	        </div>
+	        <div class="modal-body" align="center">
+	          <form action="#">
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				  <input class="mdl-textfield__input" type="text" id="sample3">
+				  <label class="mdl-textfield__label" for="sample3">Event Name</label>
+				</div>
+				<br />
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				  <input class="mdl-textfield__input" type="text" id="sample4">
+				  <label class="mdl-textfield__label" for="sample4">Event Date</label>
+				</div>
+				<br />
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				  <input class="mdl-textfield__input" type="text" id="sample5">
+				  <label class="mdl-textfield__label" for="sample5">Event Time</label>
+				</div>
+				<br /><br />
+				<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+				  Add Event
+				</button>
+			</form>
+			<br />
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
