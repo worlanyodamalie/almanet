@@ -12,8 +12,11 @@ Rails.application.routes.draw do
 
   resources :organisations do
     collection do
+       get :members
        get :email
        get :event
+       get :sms
+
     end
   end
 

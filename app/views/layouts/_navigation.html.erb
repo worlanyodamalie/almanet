@@ -16,13 +16,13 @@
               <li ><%= link_to "testimonials", '#' %> </li>
               <li ><%= link_to "pricing", '#' %> </li>
 
-              <li><%= link_to "Sign In", new_organisation_registration_path%> </li>
+              <li><%= link_to "Sign up", new_organisation_registration_path%> </li>
               <% if organisation_signed_in?%>
 
-             <li><%= link_to "Login", new_organisation_session_path  %> </li>
+
               <li><%= link_to "Logout", destroy_organisation_session_path, method: :delete %> </li>
           <% else %>
-              <li><%= link_to "Logout", destroy_organisation_session_path, method: :delete %> </li>
+              <li><%= link_to "Login", new_organisation_session_path  %> </li>
        <% end%>
 		       <!--     <li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
 		            <li><a href="#" data-nav-section="about"><span>About</span></a></li>
