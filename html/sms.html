@@ -6,332 +6,57 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<title>NectHub - Me</title>
 
-    <link rel="stylesheet" href="css/lib/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-	<!-- Wide card with share menu button -->
-	<style>
-	.demo-card-wide.mdl-card {
-	  width: 100%;
-	}
-	.demo-card-wide > .mdl-card__title {
-	  color: #fff;
-	  background-color: #3498db;
-	}
-	.demo-card-wide > .mdl-card__menu {
-	  color: #fff;
-	}
-	</style>
-	
+
 </head>
-<body class="with-side-menu control-panel control-panel-compact">
+<body>
 
-	<header class="site-header">
-	    <div class="container-fluid">
-	
-	        <a href="#" class="site-logo">
-	            <img class="hidden-md-down" src="img/logo1234.png" alt="">
-	            <img class="hidden-lg-up" src="img/logo-mob.png" alt="">
-	        </a>
-	
-	        <button id="show-hide-sidebar-toggle" class="show-hide-sidebar">
-	            <span>toggle menu</span>
-	        </button>
-	
-	        <button class="hamburger hamburger--htla">
-	            <span>toggle menu</span>
-	        </button>
-	        <div class="site-header-content">
-	            <div class="site-header-content-in">
-	                <div class="site-header-shown">
-	                    <div class="dropdown dropdown-notification notif">
-	                        <a href="#"
-	                           class="header-alarm dropdown-toggle active"
-	                           id="dd-notification"
-	                           data-toggle="dropdown"
-	                           aria-haspopup="true"
-	                           aria-expanded="false">
-	                            <i class="font-icon-alarm"></i>
-	                        </a>
-	                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-notif" aria-labelledby="dd-notification">
-	                            <div class="dropdown-menu-notif-header">
-	                                Notifications
-	                                <span class="label label-pill label-danger">4</span>
-	                            </div>
-	                            <div class="dropdown-menu-notif-list">
-	                                <div class="dropdown-menu-notif-item">
-	                                    <div class="photo">
-	                                        <img src="img/photo-64-1.jpg" alt="">
-	                                    </div>
-	                                    <div class="dot"></div>
-	                                    <a href="#">Morgan</a> was bothering about something
-	                                    <div class="color-blue-grey-lighter">7 hours ago</div>
-	                                </div>
-	                                <div class="dropdown-menu-notif-item">
-	                                    <div class="photo">
-	                                        <img src="img/photo-64-2.jpg" alt="">
-	                                    </div>
-	                                    <div class="dot"></div>
-	                                    <a href="#">Lioneli</a> had commented on this <a href="#">Super Important Thing</a>
-	                                    <div class="color-blue-grey-lighter">7 hours ago</div>
-	                                </div>
-	                                <div class="dropdown-menu-notif-item">
-	                                    <div class="photo">
-	                                        <img src="img/photo-64-3.jpg" alt="">
-	                                    </div>
-	                                    <div class="dot"></div>
-	                                    <a href="#">Xavier</a> had commented on the <a href="#">Movie title</a>
-	                                    <div class="color-blue-grey-lighter">7 hours ago</div>
-	                                </div>
-	                                <div class="dropdown-menu-notif-item">
-	                                    <div class="photo">
-	                                        <img src="img/photo-64-4.jpg" alt="">
-	                                    </div>
-	                                    <a href="#">Lionely</a> wants to go to <a href="#">Cinema</a> with you to see <a href="#">This Movie</a>
-	                                    <div class="color-blue-grey-lighter">7 hours ago</div>
-	                                </div>
-	                            </div>
-	                            <div class="dropdown-menu-notif-more">
-	                                <a href="#">See more</a>
-	                            </div>
-	                        </div>
-	                    </div>
-	
-	                    <div class="dropdown dropdown-notification messages">
-	                        <a href="#"
-	                           class="header-alarm dropdown-toggle active"
-	                           id="dd-messages"
-	                           data-toggle="dropdown"
-	                           aria-haspopup="true"
-	                           aria-expanded="false">
-	                            <i class="font-icon-mail"></i>
-	                        </a>
-	                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-messages" aria-labelledby="dd-messages">
-	                            <div class="dropdown-menu-messages-header">
-	                                <ul class="nav" role="tablist">
-	                                    <li class="nav-item">
-	                                        <a class="nav-link active"
-	                                           data-toggle="tab"
-	                                           href="#tab-incoming"
-	                                           role="tab">
-	                                            Inbox
-	                                            <span class="label label-pill label-danger">8</span>
-	                                        </a>
-	                                    </li>
-	                                    <li class="nav-item">
-	                                        <a class="nav-link"
-	                                           data-toggle="tab"
-	                                           href="#tab-outgoing"
-	                                           role="tab">Outbox</a>
-	                                    </li>
-	                                </ul>
-	                                <!--<button type="button" class="create">
-	                                    <i class="font-icon font-icon-pen-square"></i>
-	                                </button>-->
-	                            </div>
-	                            <div class="tab-content">
-	                                <div class="tab-pane active" id="tab-incoming" role="tabpanel">
-	                                    <div class="dropdown-menu-messages-list">
-	                                        <a href="#" class="mess-item">
-	                                            <span class="avatar-preview avatar-preview-32"><img src="img/photo-64-2.jpg" alt=""></span>
-	                                            <span class="mess-item-name">Tim Collins</span>
-	                                            <span class="mess-item-txt">Morgan was bothering about something!</span>
-	                                        </a>
-	                                        <a href="#" class="mess-item">
-	                                            <span class="avatar-preview avatar-preview-32"><img src="img/avatar-2-64.png" alt=""></span>
-	                                            <span class="mess-item-name">Christian Burton</span>
-	                                            <span class="mess-item-txt">Morgan was bothering about something! Morgan was bothering about something.</span>
-	                                        </a>
-	                                        <a href="#" class="mess-item">
-	                                            <span class="avatar-preview avatar-preview-32"><img src="img/photo-64-2.jpg" alt=""></span>
-	                                            <span class="mess-item-name">Tim Collins</span>
-	                                            <span class="mess-item-txt">Morgan was bothering about something!</span>
-	                                        </a>
-	                                        <a href="#" class="mess-item">
-	                                            <span class="avatar-preview avatar-preview-32"><img src="img/avatar-2-64.png" alt=""></span>
-	                                            <span class="mess-item-name">Christian Burton</span>
-	                                            <span class="mess-item-txt">Morgan was bothering about something...</span>
-	                                        </a>
-	                                    </div>
-	                                </div>
-	                                <div class="tab-pane" id="tab-outgoing" role="tabpanel">
-	                                    <div class="dropdown-menu-messages-list">
-	                                        <a href="#" class="mess-item">
-	                                            <span class="avatar-preview avatar-preview-32"><img src="img/avatar-2-64.png" alt=""></span>
-	                                            <span class="mess-item-name">Christian Burton</span>
-	                                            <span class="mess-item-txt">Morgan was bothering about something! Morgan was bothering about something...</span>
-	                                        </a>
-	                                        <a href="#" class="mess-item">
-	                                            <span class="avatar-preview avatar-preview-32"><img src="img/photo-64-2.jpg" alt=""></span>
-	                                            <span class="mess-item-name">Tim Collins</span>
-	                                            <span class="mess-item-txt">Morgan was bothering about something! Morgan was bothering about something.</span>
-	                                        </a>
-	                                        <a href="#" class="mess-item">
-	                                            <span class="avatar-preview avatar-preview-32"><img src="img/avatar-2-64.png" alt=""></span>
-	                                            <span class="mess-item-name">Christian Burtons</span>
-	                                            <span class="mess-item-txt">Morgan was bothering about something!</span>
-	                                        </a>
-	                                        <a href="#" class="mess-item">
-	                                            <span class="avatar-preview avatar-preview-32"><img src="img/photo-64-2.jpg" alt=""></span>
-	                                            <span class="mess-item-name">Tim Collins</span>
-	                                            <span class="mess-item-txt">Morgan was bothering about something!</span>
-	                                        </a>
-	                                    </div>
-	                                </div>
-	                            </div>
-	                            <div class="dropdown-menu-notif-more">
-	                                <a href="#">See more</a>
-	                            </div>
-	                        </div>
-	                    </div>
-	
-	                    <div class="dropdown user-menu">
-	                        <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	                            <img src="img/avatar-2-64.png" alt="">
-	                        </button>
-	                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
-	                            <a class="dropdown-item" href="#"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a>
-	                            <a class="dropdown-item" href="#"><span class="font-icon glyphicon glyphicon-cog"></span>Settings</a>
-	                            <a class="dropdown-item" href="#"><span class="font-icon glyphicon glyphicon-question-sign"></span>Help</a>
-	                            <div class="dropdown-divider"></div>
-	                            <a class="dropdown-item" href="#"><span class="font-icon glyphicon glyphicon-log-out"></span>Logout</a>
-	                        </div>
-	                    </div>
-	
-	                    
-	                </div><!--.site-header-shown-->
-	
-	            </div><!--site-header-content-in-->
-	        </div><!--.site-header-content-->
-	    </div><!--.container-fluid-->
-	</header><!--.site-header-->
-
-	<div class="mobile-menu-left-overlay"></div>
-	<nav class="side-menu">
-	    <ul class="side-menu-list">
-	        <li class="grey">
-	            <span>
-	                <i class="font-icon font-icon-dashboard"></i>
-	                <span class="lbl">Dashboard</span>
-	            </span>
-	        </li>
-	        <li class="red">
-	            <a href="contacts.html" class="label-right">
-	                <i class="font-icon font-icon-contacts"></i>
-	                <span class="lbl">Members</span>
-	            </a>
-	        </li>
-	        <li class="blue opened">
-	            <a href="mail.html">
-	                <i class="font-icon glyphicon glyphicon-send"></i>
-	                <span class="lbl">E-Mail</span>
-	            </a>
-	        </li>
-	        <li class="purple with-sub">
-	            <span>
-	                <i class="font-icon font-icon-comments active"></i>
-	                <span class="lbl">Text Messages</span>
-	            </span>
-	            <ul>
-	                <li><a href="messenger.html"><span class="lbl">Messenger</span></a></li>
-	                <li><a href="chat.html"><span class="lbl">Messages</span><span class="label label-custom label-pill label-danger">8</span></a></li>
-	                <li><a href="chat-write.html"><span class="lbl">Write Message</span></a></li>
-	                <li><a href="chat-index.html"><span class="lbl">Select User</span></a></li>
-	            </ul>
-	        </li>
-	        <li class="magenta">
-	            <a href="scheduler.html">
-	                <i class="font-icon font-icon-calend"></i>
-	                <span class="lbl">Calendar</span>
-	            </a>
-	        </li>
-	    </ul>
-	</nav><!--.side-menu-->
-
-	<div class="page-content">
-	    <div class="container-fluid">
-	    	<div class="container">
-	        	<div class="demo-card-wide mdl-card mdl-shadow--2dp">
-		        	<div class="mdl-card__title">
-	    				<h2 class="mdl-card__title-text">Select your contacts</h2>
-	  				</div>
-					<div class="mdl-card__supporting-text" align="center">
-						<div class="mdl-grid">
-						  <div class="mdl-cell mdl-cell--6-col">
-							<form action="#">
-							  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-							    <input class="mdl-textfield__input" type="text" id="sample3">
-							    <label class="mdl-textfield__label" for="sample3">Search by name</label>
-							  </div>
-							</form>
-						  </div>
-						  <div class="mdl-cell mdl-cell--6-col">
-						  	<form>
-								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
-							        <input class="mdl-textfield__input" type="text" id="sample2" readonly tabIndex="-1">
-							        <label for="sample2" class="mdl-textfield__label">Year group</label>
-							        <ul for="sample2" class="mdl-menu mdl-menu--bottom-left mdl-js-menu"><!-- Feed this yeargroup from the back -->
-							            <li class="mdl-menu__item" data-val="">2014</li>
-							            <li class="mdl-menu__item" data-val="">2015</li>
-							            <li class="mdl-menu__item" data-val="">2016</li>
-							            <li class="mdl-menu__item" data-val="">2017</li>
-							        </ul>
-						        </div>
-						    </form>
-						  </div>
+	<!-- The drawer is always open in large screens. The header is always shown,
+  even in small screens. -->
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+	            mdl-layout--fixed-header">
+	  <header class="mdl-layout__header">
+	    <div class="mdl-layout__header-row">
+	      <div class="mdl-layout-spacer"></div>
+	      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+	                  mdl-textfield--floating-label mdl-textfield--align-right">
+						<div class="dropdown">
+							<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+							<span class="caret"></span></button>
+							<ul class="dropdown-menu">
+								<li><a href="#">HTML</a></li>
+								<li><a href="#">CSS</a></li>
+								<li><a href="#">JavaScript</a></li>
+							</ul>
 						</div>
-						<br />
-					    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp"><!-- Feed the data from the database -->
-					      <thead>
-					        <tr>
-					          <th class="mdl-data-table__cell--non-numeric">ID</th>
-					          <th>First Name</th>
-					          <th>Last Name</th>
-					          <th>Email</th>
-					          <th>Phone Number</th>
-					          <th>Year Group</th>
-					        </tr>
-					      </thead>
-					      <tbody>
-					        <tr>
-					          <td class="mdl-data-table__cell--non-numeric">1</td>
-					          <td>KDC</td>
-					          <td>WOO</td>
-					          <td>KDC@mail.com</td>
-					          <td>123456789</td>
-					          <td>2010</td>
-					        </tr>
-					      </tbody>
-					      <tfoot>
-					        <td colspan="6" style="padding-bottom: 1em;">
-					          Pagination
-					        </td>
-					      </tfoot>
-					    </table>
-					</div>
-					<div class="mdl-card__actions mdl-card--border" align="right">
-					    <a href="email_compose.html" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-							Next
-						</a>
-					</div>
-				</div>
-	        </div>
-	    </div><!--.container-fluid-->
+	      </div>
+	    </div>
+	  </header>
+	  <div class="mdl-layout__drawer">
+	    <span class="mdl-layout-title"><a href="#" class="site-logo">
+	            <img class="hidden-md-down" src="img/logo12345.png" height="50px" width="150px" alt="">
+	        </a></span>
+	    <nav class="mdl-navigation">
+	      <a class="mdl-navigation__link" href="">Dashboard</a>
+	      <a class="mdl-navigation__link" href="">Members</a>
+	      <a class="mdl-navigation__link" href="">E-Mail</a>
+	      <a class="mdl-navigation__link" href="">Text Messages</a>
+				<a class="mdl-navigation__link" href="">Events</a>
+	    </nav>
+	  </div>
+	  <main class="mdl-layout__content">
+	    <div class="page-content"><!-- Start After here -->
+	    	
+	    </div><!-- End before here -->
+	  </main>
 	</div>
-	    
-		
 
-	<script src="js/lib/jquery/jquery.min.js"></script>
-	<script src="js/lib/tether/tether.min.js"></script>
-	<script src="js/lib/bootstrap/bootstrap.min.js"></script>
-	<script src="js/plugins.js"></script>
 	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-	
-	<script src="js/app.js"></script>
-	
 </body>
 </html>
