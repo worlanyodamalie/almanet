@@ -7,11 +7,18 @@ class OrganisationsController < ApplicationController
   end
 
   def new
-   end
-
-   def email
-   end
-
-   def event
   end
+
+  def email
+  end
+
+  def event
+  end
+
+  def members
+  end
+
+  def sms
+  end
+
 end
