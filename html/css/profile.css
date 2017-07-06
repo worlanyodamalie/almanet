@@ -1,0 +1,13 @@
+/* CSS for the profile area */
+
+.imp_card.mdl-card {
+  margin-top: 50px;
+  width: 100%;
+}
+.imp_card > .mdl-card__title {
+  color: #fff;
+  height: 50px;
+  background-color: #6173f4;
+}
+
+#file { display: none }
