@@ -1,0 +1,66 @@
+<div class="container">
+	        	<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+		        	<div class="mdl-card__title">
+	    				<h2 class="mdl-card__title-text">Select your contacts</h2>
+	  				</div>
+					<div class="mdl-card__supporting-text" align="center">
+						<div class="mdl-grid">
+						  <div class="mdl-cell mdl-cell--6-col">
+							<form action="#">
+							  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							    <input class="mdl-textfield__input" type="text" id="sample3">
+							    <label class="mdl-textfield__label" for="sample3">Search by name</label>
+							  </div>
+							</form>
+						  </div>
+						  <div class="mdl-cell mdl-cell--6-col">
+						  	<form>
+								<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+							        <input class="mdl-textfield__input" type="text" id="sample2" readonly tabIndex="-1">
+							        <label for="sample2" class="mdl-textfield__label">Year group</label>
+							        <ul for="sample2" class="mdl-menu mdl-menu--bottom-left mdl-js-menu"><!-- Feed this yeargroup from the back -->
+							            <li class="mdl-menu__item" data-val="">2014</li>
+							            <li class="mdl-menu__item" data-val="">2015</li>
+							            <li class="mdl-menu__item" data-val="">2016</li>
+							            <li class="mdl-menu__item" data-val="">2017</li>
+							        </ul>
+						        </div>
+						    </form>
+						  </div>
+						</div>
+						<br />
+					    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp"><!-- Feed the data from the database -->
+					      <thead>
+					        <tr>
+					          <th class="mdl-data-table__cell--non-numeric">ID</th>
+					          <th>First Name</th>
+					          <th>Last Name</th>
+					          <th>Email</th>
+					          <th>Phone Number</th>
+					          <th>Year Group</th>
+					        </tr>
+					      </thead>
+					      <tbody>
+					        <tr>
+					          <td class="mdl-data-table__cell--non-numeric">1</td>
+					          <td>KDC</td>
+					          <td>WOO</td>
+					          <td>KDC@mail.com</td>
+					          <td>123456789</td>
+					          <td>2010</td>
+					        </tr>
+					      </tbody>
+					      <tfoot>
+					        <td colspan="6" style="padding-bottom: 1em;">
+					          Pagination
+					        </td>
+					      </tfoot>
+					    </table>
+					</div>
+					<div class="mdl-card__actions mdl-card--border" align="right">
+					    <a href="email_compose.html" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+							Next
+						</a>
+					</div>
+				</div>
+	        </div>
