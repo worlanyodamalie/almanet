@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'events/index'
+
+  get 'membershipdata/index'
+
   # get 'static_pages/home'
 
   # get 'organisations/index'
@@ -10,14 +14,27 @@ Rails.application.routes.draw do
 
   get '/home', to: 'static_pages#home'
 
+  resources :membershipdata do
+    collection do
+      get :members
+    end
+  end
+
+ resources :events
+
   resources :organisations do
     collection do
-       get :members
        get :email
-       get :event
        get :sms
-
     end
+     resources :membershipdata do
+       collection do
+        post :import
+     end
+    end
+
+    resources :events
+
   end
 
   devise_scope :organisation do
