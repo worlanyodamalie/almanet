@@ -5,4 +5,5 @@ class Organisation < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :membershipdata
+  has_many :events
 end

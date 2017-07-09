@@ -1,7 +1,7 @@
 class OrganisationsController < ApplicationController
   before_action :authenticate_organisation!
 
-  layout "/organisations"
+  layout "organisations"
 
   def index
   end
@@ -12,8 +12,7 @@ class OrganisationsController < ApplicationController
   def email
   end
 
-  def event
-  end
+
 
   def members
   end

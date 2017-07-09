@@ -18,9 +18,9 @@
 default: &default
   adapter: postgresql
   encoding: LATIN1
-  username:  <%= ENV['pg_username'] %>
-  password:  <%= ENV['pg_password'] %>
-
+  username:  worlanyo
+  password:  Alm@n3t#!123
+ 
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>

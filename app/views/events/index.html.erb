@@ -1,0 +1,15 @@
+<h1>Events#index</h1>
+<p>Find me in app/views/events/index.html.erb</p>
+<p>  Home of events </p>
+ <br>
+<% for event in @events do %>
+   <%= event.event_name %>
+   <br>
+   <%= event.event_type %>
+   <br>
+   <%= event.event_date%>
+<%end%>
+<br>
+<br>
+<br>
+<%= link_to "Add Event" ,new_event_path %>
