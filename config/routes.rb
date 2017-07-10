@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :membershipdata do
     collection do
       get :members
+      post :import
     end
   end
 
@@ -27,13 +28,9 @@ Rails.application.routes.draw do
        get :email
        get :sms
     end
-     resources :membershipdata do
-       collection do
-        post :import
-     end
-    end
+     resources :membershipdata
 
-    resources :events
+     resources :events
 
   end
 

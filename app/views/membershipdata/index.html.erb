@@ -6,19 +6,11 @@
                     <div align="center">
                         <br />
                         <div class="mdl-grid">
-                            <div class="mdl-cell mdl-cell--8-col">Upload your existing member data. (CSV or Excel format)</div>
+                 <div class="mdl-cell mdl-cell--8-col">Upload your existing member data. (CSV or Excel format)</div>
                             <div class="mdl-cell mdl-cell--4-col">
-                                <%#<form action="" method="POST">
-                                    <input type="file" id="file">
-                                    <label for="file" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                                        Upload
-                                    </label>
-                                </form>%>
+
                                 <!-- import_organisation_membershipdata_path(current_organisation.id) -->
-                                <%= form_tag , multipart: true do%>
-                                <%= file_field_tag :file %>
-                                <%= submit_tag "Import" , :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
-                                <% end %>
+                                <%= render 'importform' %>
                             </div>
                         </div>
                     </div>

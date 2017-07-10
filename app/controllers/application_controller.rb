@@ -1,7 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  after_filter :store_action
+  #after_filter :store_action
+  after_action :store_action
+  include MembershipdataHelper
+
 
 #Redirect after sign in
   def store_action
