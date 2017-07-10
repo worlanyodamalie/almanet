@@ -10,7 +10,11 @@
                             <div class="mdl-cell mdl-cell--4-col">
 
                                 <!-- import_organisation_membershipdata_path(current_organisation.id) -->
-                                <%= render 'importform' %>
+                                <%= form_tag import_membershipdata_path , multipart: true do%>
+                                <%= file_field_tag :files %>
+                                <%= submit_tag "Import" , :class => "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
+                                <% end %>
+
                             </div>
                         </div>
                     </div>
@@ -31,15 +35,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="mdl-data-table__cell--non-numeric">Chris</td>
-                            <td>Bimpong</td>
-                            <td>MEST</td>
-                            <td>123456789</td>
-                            <td>Chris@NectHub.com</td>
-                            <td>NectHub</td>
-                            <td>2017</td>
+                       <% for member in @members do %>
+                           <tr>
+                            <td class="mdl-data-table__cell--non-numeric"> <%= member.FirstName %> </td>
+                            <td><%= member.LastName%></td>
+                            <td><%= member.Organisation%></td>
+                            <td><%= member.PhoneNumber%></td>
+                            <td><%= member.Email%></td>
+                            <td><%= member.WorkPlace %></td>
+                            <td><%= member.YearCompleted %></td>
                         </tr>
+                       <%  end  %>
+
+
                     </tbody>
                 </table>
             </div>

@@ -4,6 +4,7 @@ class MembershipdataController < ApplicationController
    layout "organisations"
 
   def index
+    @members = current_organisation.membershipdata
   end
 
   def members
