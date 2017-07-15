@@ -6,39 +6,122 @@
     </div>
     <hr />
     <br />
-    <br />
-    <div class="table-responsive"><!-- From Database -->          
+   <!-- <%= check_box_tag 'organisations_ids[]' , @organisations.try(:id) %> -->
+      <div class="row">
+        <div class="col-md-8">
+        <% form_tag(:action => 'new')  %>
+             <div class="table-responsive">
                     <table class="table">
                         <thead>
                             <tr>
+                                <th><input class="selectAll"   type="checkbox">  <th>
                                 <th>First Name</th>
                                 <th>Last Name</th>
-                                <th>Organization</th>
-                                <th>Phone Number</th>
                                 <th>E-Mail</th>
-                                <th>Work Place</th>
-                                <th>Year Completed</th>
+
                             </tr>
                         </thead>
                         <tbody>
+                           <%  @organisations.each  do |org|%>
                             <tr>
-                                <td>Chris</td>
-                                <td>Bimpong</td>
-                                <td>MEST</td>
-                                <td>123456789</td>
-                                <td>Chris@NectHub.com</td>
-                                <td>NectHub</td>
-                                <td>2017</td>
+                            <td> <input id="checkBox" class="selectAll"  value="<%=[ org.FirstName , org.Email  ] %>" type="checkbox"> <td>
+                            <td > <%= org.FirstName %> </td>
+                            <td><%=  org.try(:LastName)%></td>
+                            <td><%=  org.try(:Email)%></td>
                             </tr>
+                            <% end %>
                         </tbody>
                     </table>
                 </div>
+
+
+        </div>
+      </div>
+
                 <br />
                 <br />
-                <div align="right">
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                        Next
-                    </button>
+                <div align="center">
+                <%#<button  id="btnId"  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                 Next
+                <button>%>
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="email_id" , data="hey">
+                 NEXT
+                </button>
+
                 </div>
 
+
 </div>
+
+ <script>
+
+
+  <%#$(document).ready(function() {
+    var arr = [];
+    var value;
+    var $selectAll = $('#selectAll'); // main checkbox inside table thead
+    var $table = $('.table'); // table selector
+    var $tdCheckbox = $table.find('tbody input:checkbox'); // checboxes inside table body
+    var $tdCheckboxChecked = []; // checked checbox arr
+
+    //Select or deselect all checkboxes on main checkbox change
+    $selectAll.on('click', function () {
+        $tdCheckbox.prop('checked', this.checked);
+    });
+
+    //Switch main checkbox state to checked when all checkboxes inside tbody tag is checked
+    $tdCheckbox.on('change', function(){
+        $tdCheckboxChecked = $table.find('tbody input:checkbox:checked');//Collect all checked checkboxes from tbody tag
+    //if length of already checked checkboxes inside tbody tag is the same as all tbody checkboxes length, then set property of main checkbox to "true", else set to "false"
+        $selectAll.prop('checked', ($tdCheckboxChecked.length == $tdCheckbox.length));
+    })
+
+     if(this.$tdCheckboxChecked){
+          $tdCheckboxChecked  = this.tdCheckboxChecked; // put the value of checked only
+           arr.push(this.$tdCheckboxChecked);
+        }
+       console.log(arr);
+});%>
+
+
+
+  <%#var value;
+  var arr = [];
+$('.selectAll').click(function (e) {
+    $(this).closest('table').find('td input:checkbox').prop('checked', this.checked);
+    if(this.checked){
+        value = this.value;
+        arr.push(this.value);
+    }
+    console.log(arr);
+});%>
+
+
+
+
+
+
+
+
+
+
+    //var value;
+    //var arr = [];
+    //$('input[type=checkbox]').change(function () {
+
+        <%#if(this.checked){
+           value = this.value; // put the value of checked only
+           arr.push(this.value);
+        }%>
+      //  $(this.checked).each(function(){
+        //    arr.push(this.value);
+        ///});
+
+        //console.log(value);
+    //});
+
+
+
+
+
+ </script>

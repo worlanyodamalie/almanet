@@ -19,8 +19,8 @@
 
                             <% for event in @events do %>
                                  <h4>
-                                  <%= event.event_name %> <br>
-                                   <%= event.event_date%>  <br>
+                                  <%= event.try(:event_name) %> <br>
+                                   <%= event.try(:event_date)%>  <br>
                                   </h4>
                            <% end %>
                         </div>

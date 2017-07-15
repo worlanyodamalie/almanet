@@ -1,0 +1,23 @@
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p>compose Email</p>
+
+<%= form_tag(:action => 'send_email')%>
+
+<div class="form-group">
+  <%= label_tag(:to, "Recipient's email address") %>
+  <%= email_field_tag :to,  value: "hey" ,  class: "form-control" , id: "recipient_id" %>
+</div>
+
+<div class="form-group">
+  <%= label_tag(:body, "Message") %>
+  <%= text_area_tag :body, "", class: "form-control" %>
+</div>
+
+<%= submit_tag("Send", :class => "btn btn-primary") %>
