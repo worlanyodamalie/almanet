@@ -1,3 +1,9 @@
+<!--
+    select first name with email
+    pass to recepient field on next page
+    pass hash to recepient variable
+    send message
+   -->
 
 <div class="container">
 
@@ -24,8 +30,8 @@
                         <tbody>
                            <%  @organisations.each  do |org|%>
                             <tr>
-                            <td> <input id="checkBox" class="selectAll"  value="<%=[ org.FirstName , org.Email  ] %>" type="checkbox"> <td>
-                            <td > <%= org.FirstName %> </td>
+                            <td> <input id="checkBox" class="selectAll"  value="<%=[ org.Email  ] %>" type="checkbox"> <td>
+                            <td > <%= org.try(:FirstName) %> </td>
                             <td><%=  org.try(:LastName)%></td>
                             <td><%=  org.try(:Email)%></td>
                             </tr>
@@ -44,7 +50,7 @@
                 <%#<button  id="btnId"  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                  Next
                 <button>%>
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="email_id" , data="hey">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="email_id" , data="">
                  NEXT
                 </button>
 

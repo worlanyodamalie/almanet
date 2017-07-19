@@ -12,7 +12,13 @@
 
 <div class="form-group">
   <%= label_tag(:to, "Recipient's email address") %>
-  <%= email_field_tag :to,  value: "hey" ,  class: "form-control" , id: "recipient_id" %>
+  <%= email_field_tag :to , value: "" %>
+</div>
+
+<div class="form-group">
+
+  <%= label_tag(:subject, "Subject") %>
+  <%= text_field_tag :subject  %>
 </div>
 
 <div class="form-group">
