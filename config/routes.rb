@@ -28,9 +28,9 @@ Rails.application.routes.draw do
        get :email
        get :sms
        get :send_message
-       post :send_message
+       post :send_sms
        get :send_email
-       post :send_email
+       #post :send_email
     end
      resources :membershipdata
 

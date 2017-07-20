@@ -62,67 +62,84 @@
  <script>
 
 
-var url = "/organisations/send_message";
+// var url = "/organisations/send_message";
 
- function setCookies(cname,cvalue,exdays) {
-      var d = new Date();
-      d.setTime(d.getTime() + (exdays*24*60*60*1000));
-      var expires = "expires=" + d.toGMTString();
-      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-  }
-
-
-  function getCookie(cname) {
-      var name = cname + "=";
-      var decodedCookie = decodeURIComponent(document.cookie);
-      var ca = decodedCookie.split(';');
-    for(var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
+//  function setCookies(cname,cvalue,exdays) {
+//       var d = new Date();
+//       d.setTime(d.getTime() + (exdays*24*60*60*1000));
+//       var expires = "expires=" + d.toGMTString();
+//       document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+//   }
 
 
+//   function getCookie(cname) {
+//       var name = cname + "=";
+//       var decodedCookie = decodeURIComponent(document.cookie);
+//       var ca = decodedCookie.split(';');
+//     for(var i = 0; i < ca.length; i++) {
+//         var c = ca[i];
+//         while (c.charAt(0) == ' ') {
+//             c = c.substring(1);
+//         }
+//         if (c.indexOf(name) == 0) {
+//             return c.substring(name.length, c.length);
+//         }
+//     }
+//     return "";
+// }
 
-$(document).ready(function () {
 
-        $('input[type=checkbox]').click(function(){
-            var contacts = '';
-            var  nvalue;
 
-            var output = $('input[type=checkbox]:checked').map(function(   ){
+// $(document).ready(function () {
 
-                nvalue =  this.value.replace(/[\]\['"]+/g, '');
+//         $('input[type=checkbox]').click(function(){
+//             var contacts = '';
+//             var  nvalue;
 
-                contacts = contacts + nvalue + ',';
+//             var output = $('input[type=checkbox]:checked').map(function(   ){
 
-                scontacts = contacts.slice(0,-1);
+//                 nvalue =  this.value.replace(/[\]\['"]+/g, '');
 
-                return scontacts; }).get();
+//                 //contacts = contacts + nvalue + ',';
 
-                console.log("something");
+//                 //scontacts = contacts.slice(0,-1);
 
-                console.log(scontacts);
+//                 //return scontacts;
+//                   return nvalue;      }).get();
 
-              $('#email_id').attr("data" , scontacts);
+//                 console.log("nvalue": nvalue);
 
-              setCookies("email_token", scontacts   , 6000);
-        });
-        $('#email_id').click(function(){
-             console.log($(this).attr("data"));
+//                 console.log(output);
 
-            $(location).attr('href',url);
+//                 //console.log(nvalue);
 
-            $('#recipient_id').val($(this).attr("data"));
-        });
-        var unformattedArray = getCookie("email_token");
+//               $('#email_id').attr("data" , output);
 
-        $("#to").attr("value", unformattedArray);
-   });
+//               setCookies("email_token", output   , 6000);
+
+//               console.log( "setCookies" : setCookies  );
+//         });
+
+//         $('#email_id').click(function(){
+//              console.log($(this).attr("data"));
+
+//             $(location).attr('href',url);
+
+//             $('#recipient_id').val($(this).attr("data"));
+//         });
+
+
+//         var retrieveContacts  = $.parseJSON(getCookie("email_token"))
+
+//         console.log(getCookie);
+
+//         console.log(retrieveContacts);
+
+//         console.log("Something must be here");
+
+//         $("#to").attr("value", retrieveContacts);
+
+
+
+//    });
  </script>
