@@ -27,6 +27,8 @@ Rails.application.routes.draw do
     collection do
        get :email
        get :sms
+       get :send_message
+       post :send_message
        get :send_email
        post :send_email
     end

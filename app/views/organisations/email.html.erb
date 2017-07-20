@@ -62,72 +62,67 @@
  <script>
 
 
-  <%#$(document).ready(function() {
-    var arr = [];
-    var value;
-    var $selectAll = $('#selectAll'); // main checkbox inside table thead
-    var $table = $('.table'); // table selector
-    var $tdCheckbox = $table.find('tbody input:checkbox'); // checboxes inside table body
-    var $tdCheckboxChecked = []; // checked checbox arr
+var url = "/organisations/send_message";
 
-    //Select or deselect all checkboxes on main checkbox change
-    $selectAll.on('click', function () {
-        $tdCheckbox.prop('checked', this.checked);
-    });
+ function setCookies(cname,cvalue,exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays*24*60*60*1000));
+      var expires = "expires=" + d.toGMTString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
 
-    //Switch main checkbox state to checked when all checkboxes inside tbody tag is checked
-    $tdCheckbox.on('change', function(){
-        $tdCheckboxChecked = $table.find('tbody input:checkbox:checked');//Collect all checked checkboxes from tbody tag
-    //if length of already checked checkboxes inside tbody tag is the same as all tbody checkboxes length, then set property of main checkbox to "true", else set to "false"
-        $selectAll.prop('checked', ($tdCheckboxChecked.length == $tdCheckbox.length));
-    })
 
-     if(this.$tdCheckboxChecked){
-          $tdCheckboxChecked  = this.tdCheckboxChecked; // put the value of checked only
-           arr.push(this.$tdCheckboxChecked);
+  function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
         }
-       console.log(arr);
-});%>
-
-
-
-  <%#var value;
-  var arr = [];
-$('.selectAll').click(function (e) {
-    $(this).closest('table').find('td input:checkbox').prop('checked', this.checked);
-    if(this.checked){
-        value = this.value;
-        arr.push(this.value);
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
     }
-    console.log(arr);
-});%>
+    return "";
+}
 
 
 
+$(document).ready(function () {
 
+        $('input[type=checkbox]').click(function(){
+            var contacts = '';
+            var  nvalue;
 
+            var output = $('input[type=checkbox]:checked').map(function(   ){
 
+                nvalue =  this.value.replace(/[\]\['"]+/g, '');
 
+                contacts = contacts + nvalue + ',';
 
+                scontacts = contacts.slice(0,-1);
 
+                return scontacts; }).get();
 
-    //var value;
-    //var arr = [];
-    //$('input[type=checkbox]').change(function () {
+                console.log("something");
 
-        <%#if(this.checked){
-           value = this.value; // put the value of checked only
-           arr.push(this.value);
-        }%>
-      //  $(this.checked).each(function(){
-        //    arr.push(this.value);
-        ///});
+                console.log(scontacts);
 
-        //console.log(value);
-    //});
+              $('#email_id').attr("data" , scontacts);
 
+              setCookies("email_token", scontacts   , 6000);
+        });
+        $('#email_id').click(function(){
+             console.log($(this).attr("data"));
 
+            $(location).attr('href',url);
 
+            $('#recipient_id').val($(this).attr("data"));
+        });
+        var unformattedArray = getCookie("email_token");
 
-
+        $("#to").attr("value", unformattedArray);
+   });
  </script>

@@ -7,9 +7,9 @@ class SendMailer < ApplicationMailer
   # end
 
   def send_email(to,subject,body,organisation)
-   
+
     @organisation = organisation
-    mail(:to => to , :from => @organisation.email , :subject => subject ) do  |format|
+    mail(:to => to , :from => @organisation.try(:email) , :subject => subject ) do  |format|
         format.text { render :text => body }
         format.html { render :text => body  }
     end

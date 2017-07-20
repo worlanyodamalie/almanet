@@ -81,74 +81,113 @@
 
 
 
-var arr = [];
-var url = "/organisations/send_email";
-
- function setCookies(cname,cvalue,exdays) {
-      var d = new Date();
-      d.setTime(d.getTime() + (exdays*24*60*60*1000));
-      var expires = "expires=" + d.toGMTString();
-      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-  }
+//var arr = [];
 
 
-  function getCookie(cname) {
-      var name = cname + "=";
-      var decodedCookie = decodeURIComponent(document.cookie);
-      var ca = decodedCookie.split(';');
-    for(var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
+// var url = "/organisations/send_message";
+
+//  function setCookies(cname,cvalue,exdays) {
+//       var d = new Date();
+//       d.setTime(d.getTime() + (exdays*24*60*60*1000));
+//       var expires = "expires=" + d.toGMTString();
+//       document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+//   }
 
 
-
-$(document).ready(function () {
-
-        $('input[type=checkbox]').click(function(){
-            var output = $('input[type=checkbox]:checked').map(function(){ return this.value; }).get();
-            console.log(output);
-            $('#email_id').attr("data" , JSON.stringify(output));
-            setCookies("email_token",  JSON.stringify(output)   , 6000);
-
-        });
-        $('#email_id').click(function(){
-             console.log($(this).attr("data"));
-             console.log(getCookie);
-            $(location).attr('href',url);
-            $('#recipient_id').val($(this).attr("data"));
-        });
+//   function getCookie(cname) {
+//       var name = cname + "=";
+//       var decodedCookie = decodeURIComponent(document.cookie);
+//       var ca = decodedCookie.split(';');
+//     for(var i = 0; i < ca.length; i++) {
+//         var c = ca[i];
+//         while (c.charAt(0) == ' ') {
+//             c = c.substring(1);
+//         }
+//         if (c.indexOf(name) == 0) {
+//             return c.substring(name.length, c.length);
+//         }
+//     }
+//     return "";
+// }
 
 
 
-        // var unformattedArray = $.parseJSON(getCookie("email_token"));
-          var unformattedArray = $.parseJSON(getCookie("email_token"));
-        // var body = '{'
-        // $.each(unformattedArray, function(ind, ele){
-        //   ele = ele.slice(1, ele.length-1);
-        //   body += ele + ","
-        //   console.log(ele);
+// $(document).ready(function () {
 
-        // })
-        // body = body.slice(0, body.length-1) + '}'
+//         $('input[type=checkbox]').click(function(){
+//             var contacts = '';
+//             var  nvalue;
+
+//             var output = $('input[type=checkbox]:checked').map(function(   ){
+//             //console.log(this.value.length);
+
+//                 nvalue =  this.value.replace(/[\]\['"]+/g, '');
+
+//                 // contacts = contacts + nvalue + ',';
+//                 contacts = contacts + nvalue + ',';
+
+//                 scontacts = contacts.slice(0,-1);
+//                // splitcontacts =  contacts.split(',').join(',');
+//                  //console.log("this.value:", nvalue);
+//                    //console.log(contacts);
+//                 return scontacts; }).get();
+//                 console.log(scontacts);
+
+//             //    var nv = newContacts.join('');
+//             //    console.log('nv: ',nv);
+
+//               //$('#email_id').attr("data" , JSON.stringify(output));
+//               //setCookies("email_token",  JSON.stringify(output)   , 6000);
+//               $('#email_id').attr("data" , scontacts);
+//               setCookies("email_token", scontacts   , 6000);
 
 
-        setCookies("email_token",    unformattedArray , 6000);
-        //var getEmails = $.parseJSON(getCookie("email_token"));
-
-        //setCookies("email_token",    getEmails , 6000);
-
-        $("#to").attr("value", unformattedArray);
-
-
-
+//         });
+//         $('#email_id').click(function(){
+//              console.log($(this).attr("data"));
+//              //console.log(getCookie);
+//             $(location).attr('href',url);
+//             $('#recipient_id').val($(this).attr("data"));
+//         });
 
 
-   });
+
+//         // var unformattedArray = $.parseJSON(getCookie("email_token"));
+//           var unformattedArray = getCookie("email_token");
+//         //   var phoneNumbers = '';
+//         //   var i = 0;
+//         //   for(i = 0; i< unformattedArray.length; i++) {
+//         //     phoneNumbers += unformattedArray[i];
+//         //   }
+
+//           //console.log('phone: ',phoneNumbers);
+
+//         //   var stripped = unformattedArray.replace(/[\]\['"]+/g, '');
+//         // var body = '{'
+//         // $.each(unformattedArray, function(ind, ele){
+//         //   ele = ele.slice(1, ele.length-1);
+//         //   body += ele + ","
+//         //   console.log(ele);
+
+//         // })
+//         // body = body.slice(0, body.length-1) + '}'
+
+//         //console.log(unformattedArray);
+
+
+
+//         //setCookies("email_token", unformattedArray  , 6000);
+
+
+//         //console.log(unformattedArray);
+
+//         $("#to").attr("value", unformattedArray);
+
+
+
+
+
+//    });
+
+
+
